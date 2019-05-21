@@ -21,7 +21,7 @@ var animationref = null ;
 
 
 canvas.width = innerWidth/1.2;
-canvas.height = innerHeight/2;
+canvas.height = innerHeight;
 
 const waveFolder = gui.addFolder('WAVE');   
 waveFolder.add(wave , 'y' ,0 ,canvas.height,0.1);
