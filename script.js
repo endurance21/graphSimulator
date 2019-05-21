@@ -28,11 +28,12 @@ waveFolder.add(wave , 'y' ,0 ,canvas.height,0.1);
 waveFolder.add(wave ,'frequency',-0.1,0.1 ,0.0001);
 waveFolder.add(wave ,'amplitude' ,-300, 300 ,0.9);
 waveFolder.add(wave ,'velocity' ,-2, 2 ,0.001);
-
+waveFolder.open();
 const strokeFolder = gui.addFolder('COLOR');
 strokeFolder.add(strokeColor ,'r',0,255)
 strokeFolder.add(strokeColor ,'g',0,255)
 strokeFolder.add(strokeColor ,'b',0,255)
+strokeFolder.open();
 
 const animationFolder  = gui.addFolder('ANIMATION_CONTROL');
 animationFolder.add(animation , 'cancelAnimation').onFinishChange(()=>{
@@ -41,6 +42,7 @@ animationFolder.add(animation , 'cancelAnimation').onFinishChange(()=>{
     else
     animate();
 });
+animationFolder.open();
 animationFolder.add(animation, 'doClearRect');
 
 
