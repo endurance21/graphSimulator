@@ -4,7 +4,7 @@ var wave = {
     y:canvas.height/2,
     frequency:0.01,
     amplitude:canvas.height/5,
-    velocity:0.09,
+    velocity:0.303,
 };
 var strokeColor = {
     r:255 ,
@@ -13,7 +13,7 @@ var strokeColor = {
 };
 var animation = {
     cancelAnimation:false ,
-    doClearRect:true 
+    doClearRect:false 
 }
 var gui = new dat.GUI();
 var increament = 2 ;
