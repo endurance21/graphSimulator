@@ -20,8 +20,8 @@ var increament = 2 ;
 var animationref = null ;
 
 
-canvas.width = innerWidth/1.2;
-canvas.height = innerHeight;
+canvas.width = innerWidth/2;
+canvas.height = innerHeight/1.2;
 
 const waveFolder = gui.addFolder('WAVE');   
 waveFolder.add(wave , 'y' ,0 ,canvas.height,0.1);
