@@ -7,6 +7,9 @@ body{
     width:40% !important ;
 }
 canvas{
+    position: relative;
+    top:0px;
+    left:0px;
     width:58%;
 }
 @media(max-width:991px){
@@ -20,6 +23,10 @@ canvas{
         height: 50vh !important;
         width:100% !important ;
     }
+
+    div>h1{
+
+    }
     }
 
 
@@ -29,4 +36,12 @@ canvas{
     }
     .full_width {
         width: 100% !important;
+    }
+    div>h1{
+        position: relative;
+        font-family: 'Cinzel', serif;
+        color:white;
+        top:0px;
+        left:20vw ;
+        opacity:0.4;
     }
