@@ -58,6 +58,7 @@ function animate(){
     ctx.moveTo(0,canvas.height/2);
     ctx.beginPath();
     for(let i = 0 ; i< canvas.width ; i+=1 ) {
+    ctx.lineWidth = 0.06;
     ctx.lineTo( i , wave.y + Math.sin(i*(wave.frequency) + increament)*(wave.amplitude)) ;
     ctx.strokeStyle = "rgb("+ strokeColor.r +"," + strokeColor.g + ","+strokeColor.b+") ";
     ctx.stroke();   
