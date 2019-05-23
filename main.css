@@ -21,3 +21,12 @@ canvas{
         width:100% !important ;
     }
     }
+
+
+    .longtext {
+        line-height: 13px !important;
+        height: 40px !important;
+    }
+    .full_width {
+        width: 100% !important;
+    }

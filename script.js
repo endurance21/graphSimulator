@@ -13,7 +13,7 @@ var strokeColor = {
 };
 var animation = {
     cancelAnimation:false ,
-    shadows:false 
+    shadows:true 
 }
 var gui = new dat.GUI();
 var increament = 2 ;
