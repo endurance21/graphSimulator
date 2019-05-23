@@ -1,7 +1,7 @@
 const canvas  = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 var wave = {
-    y:canvas.height/2,
+    y:canvas.height/1.2,
     frequency:0.01,
     amplitude:canvas.height/3,
     velocity:0.303,
