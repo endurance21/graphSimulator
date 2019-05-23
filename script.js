@@ -69,10 +69,15 @@ function animate(){
     ctx.fillText("D_R CREATION", canvas.width/2, canvas.height-10); 
     increament+=Math.abs(Math.sin(wave.velocity/5));
     wave.amplitude+=Math.sin(Math.cos(increament)*increament/27);
-    // wave.y+=Math.cos(increament)*1.5;
-    // wave.frequency+=Math.sin(Math.sin(increament)*increament/100)/500;
+    console.log(wave.amplitude,increament)
+    if(increament>90){
+      increament=2;
+     
+    }
+    if(wave.amplitude>48)
+    wave.amplitude = 20;
+    wave.frequency+=Math.sin(Math.sin(increament)*increament/5000)/500;
 
-  
 }
 animate();
 
