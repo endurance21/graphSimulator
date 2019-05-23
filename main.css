@@ -10,7 +10,7 @@ canvas{
     position: relative;
     top:0px;
     left:0px;
-    width:58%;
+    width:60%;
 }
 @media(max-width:991px){
     .dg.a { 
@@ -23,25 +23,16 @@ canvas{
         height: 50vh !important;
         width:100% !important ;
     }
-
-    div>h1{
-
-    }
+    div{
+        width: 100%
     }
 
+}
 
-    .longtext {
-        line-height: 13px !important;
-        height: 40px !important;
-    }
-    .full_width {
-        width: 100% !important;
-    }
-    div>h1{
-        position: relative;
-        font-family: 'Cinzel', serif;
-        color:white;
-        top:0px;
-        left:20vw ;
-        opacity:0.4;
-    }
+.longtext {
+    line-height: 13px !important;
+    height: 40px !important;
+}
+.full_width {
+    width: 100% !important;
+}
