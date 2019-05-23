@@ -26,7 +26,7 @@ var animationref = null ;
 const waveFolder = gui.addFolder('WAVE');   
 waveFolder.add(wave , 'y' ,0 ,canvas.height,0.08);
 waveFolder.add(wave ,'frequency',0,0.1 ,0.0001);
-waveFolder.add(wave ,'amplitude' ,-300, 300 ,0.9);
+waveFolder.add(wave ,'amplitude' ,1, 40 ,0.9);
 waveFolder.add(wave ,'velocity' ,0, 2 ,0.001);
 waveFolder.open();
 const strokeFolder = gui.addFolder('COLOR');
@@ -69,6 +69,7 @@ function animate(){
     ctx.fillText("D_R CREATION", canvas.width/2, canvas.height-10); 
     increament+=Math.abs(Math.sin(wave.velocity/5));
     wave.amplitude+=Math.sin(Math.cos(increament)*increament/27);
+    // wave.y+=Math.cos(increament)*1.5;
     // wave.frequency+=Math.sin(Math.sin(increament)*increament/100)/500;
 
   
