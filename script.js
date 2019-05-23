@@ -7,7 +7,7 @@ var wave = {
     velocity:0.303,
 };
 var strokeColor = {
-    r:255 ,
+    r:111 ,
     g:134,
     b:227
 };
@@ -25,9 +25,9 @@ var animationref = null ;
 
 const waveFolder = gui.addFolder('WAVE');   
 waveFolder.add(wave , 'y' ,0 ,canvas.height,0.08);
-waveFolder.add(wave ,'frequency',-0.1,0.1 ,0.0001);
+waveFolder.add(wave ,'frequency',0,0.1 ,0.0001);
 waveFolder.add(wave ,'amplitude' ,-300, 300 ,0.9);
-waveFolder.add(wave ,'velocity' ,-2, 2 ,0.001);
+waveFolder.add(wave ,'velocity' ,0, 2 ,0.001);
 waveFolder.open();
 const strokeFolder = gui.addFolder('COLOR');
 strokeFolder.add(strokeColor ,'r',0,255)
