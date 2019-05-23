@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 var wave = {
     y:canvas.height/2,
     frequency:0.01,
-    amplitude:canvas.height/5,
+    amplitude:canvas.height/3,
     velocity:0.303,
 };
 var strokeColor = {
@@ -13,7 +13,7 @@ var strokeColor = {
 };
 var animation = {
     cancelAnimation:false ,
-    doClearRect:false 
+    shadows:false 
 }
 var gui = new dat.GUI();
 var increament = 2 ;
@@ -21,7 +21,7 @@ var animationref = null ;
 
 
 canvas.width = innerWidth/2;
-canvas.height = innerHeight/1.2;
+canvas.height = innerHeight/2;
 
 const waveFolder = gui.addFolder('WAVE');   
 waveFolder.add(wave , 'y' ,0 ,canvas.height,0.1);
@@ -43,26 +43,27 @@ animationFolder.add(animation , 'cancelAnimation').onFinishChange(()=>{
     animate();
 });
 animationFolder.open();
-animationFolder.add(animation, 'doClearRect');
+animationFolder.add(animation, 'shadows');
 
 
 function animate(){
     animationref = requestAnimationFrame(animate) ;
-    if(animation.doClearRect)
+    if(!animation.shadows)
         ctx.clearRect(0,0,canvas.width,canvas.height); 
-   else{
-       ctx.fillStyle = 'rgba(0,0,0,0.01)';
+    else{
+       ctx.fillStyle = 'rgba(0,0,0,0.09)';
        ctx.fillRect(0,0,canvas.width,canvas.height);
      }
-  ctx.moveTo(0,canvas.height/2);
-  ctx.beginPath();
-  for(let i = 0 ; i< canvas.width ; i++ ) {
-  ctx.lineTo( i , wave.y + Math.sin(i*(wave.frequency) + increament)*(wave.amplitude)) ;
-
-  ctx.strokeStyle = "rgb("+ strokeColor.r +"," + strokeColor.g + ","+strokeColor.b+") ";
-  ctx.stroke();
+    ctx.moveTo(0,canvas.height/2);
+    ctx.beginPath();
+    for(let i = 0 ; i< canvas.width ; i++ ) {
+    ctx.lineTo( i , wave.y + Math.sin(i*(wave.frequency) + increament)*(wave.amplitude)) ;
+    ctx.strokeStyle = "rgb("+ strokeColor.r +"," + strokeColor.g + ","+strokeColor.b+") ";
+    ctx.stroke();   
  }
+ wave
  increament+=Math.abs(Math.sin(wave.velocity/5));
+
   
 }
 animate();

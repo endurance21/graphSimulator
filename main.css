@@ -2,3 +2,22 @@ body{
     margin: 0 px;
     background: rgb(19, 1, 1);
 }
+
+.dg.a{
+    width:40% !important ;
+}
+canvas{
+    width:58%;
+}
+@media(max-width:991px){
+    .dg.a { 
+        position: relative  !important;
+        top:50vh !important;
+        float: left !important;
+        width:99% !important 
+    }
+    canvas{
+        height: 50vh !important;
+        width:100% !important ;
+    }
+    }
