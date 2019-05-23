@@ -20,8 +20,8 @@ var increament = 2 ;
 var animationref = null ;
 
 
-// canvas.width = innerWidth/2;
-// canvas.height = innerHeight/2;
+// canvas.width = window.innerWidth/2;  
+// canvas.height = window.innerHeight/2;
 
 const waveFolder = gui.addFolder('WAVE');   
 waveFolder.add(wave , 'y' ,0 ,canvas.height,0.08);
@@ -57,7 +57,7 @@ function animate(){
      }
     ctx.moveTo(0,canvas.height/2);
     ctx.beginPath();
-    for(let i = 0 ; i< canvas.width ; i+=1.5 ) {
+    for(let i = 0 ; i< canvas.width ; i+=1 ) {
     ctx.lineTo( i , wave.y + Math.sin(i*(wave.frequency) + increament)*(wave.amplitude)) ;
     ctx.strokeStyle = "rgb("+ strokeColor.r +"," + strokeColor.g + ","+strokeColor.b+") ";
     ctx.stroke();   
@@ -68,6 +68,8 @@ function animate(){
     ctx.textAlign = "center";
     ctx.fillText("D_R CREATION", canvas.width/2, canvas.height-10); 
     increament+=Math.abs(Math.sin(wave.velocity/5));
+    wave.amplitude+=Math.sin(Math.cos(increament)*increament/27);
+    // wave.frequency+=Math.sin(Math.sin(increament)*increament/100)/500;
 
   
 }
